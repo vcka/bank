@@ -1,11 +1,18 @@
 package com.company;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Menu {
     Menu(){
         init();
     }
+
+    String regex = "^(.+)@(.+)$";
+
+    Pattern pattern = Pattern.compile(regex);
+
 
     public void init(){
 
@@ -17,7 +24,8 @@ public class Menu {
         do {
             System.out.println("Iveskite emaila");
             email = scn.next();
-            if (email.contains("@")) break;
+            Matcher matcher = pattern.matcher(email);
+            if (matcher.matches()) break;
             else System.out.println("Neteisingas Email");
         }while(true);
 
