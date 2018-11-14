@@ -9,7 +9,13 @@ public class Menu {
         init();
     }
 
-    String regex = "^(.+)@(.+)$";
+    String regex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+
+            "[a-zA-Z0-9_+&*-]+)*@" +
+
+            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+
+            "A-Z]{2,7}$";
 
     Pattern pattern = Pattern.compile(regex);
 
@@ -31,9 +37,9 @@ public class Menu {
 
         double balance;
         do {
-            System.out.println("Iveskite balansa");
-            String input = scn.next();
             try {
+                System.out.println("Iveskite balansa");
+                String input = scn.next();
                 balance = Double.parseDouble(input);
                 if (balance>=0) break;
                 // number is good.
