@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.List;
 import java.util.Random;
 
 public class Account {
@@ -9,6 +10,29 @@ public class Account {
     private double balance;
     private boolean isCreditable;
     private int creditLimit;
+    public List<Item> items;
+
+    public List<Item> getItems(){
+        return items;
+    }
+
+    public void addItem(Item item){
+        items.add(item);
+    }
+
+    public Item getItem(String productId){
+        for (int i = 0; i< items.size(); i++){
+            Item item = items.get(i);
+            if (productId.equals(item.getProductId())) return item;
+        }
+        System.out.println("Produktas nerastas");
+        return null;
+    }
+
+    public void removeItem(Object o){
+        this.items.remove(o);
+    }
+
 
     Account(String n, String e){
         this.name = n;
@@ -105,4 +129,6 @@ public class Account {
         }
         return result;
     }
+
+
 }
