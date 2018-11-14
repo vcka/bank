@@ -14,6 +14,7 @@ public class Main {
         users.add(new Account("Margarita", "margarita@abc.com", 19, 10));
         users.add(new Account("Marius", "marius@abc.com"));
         users.add(new Account("Jonas", "jonas@abc.com", 6001));
+        users.add(new Account("vcka", "vcka@ministras.lt", 16001));
 
         Transaction t = new Transaction(users.get(0), users.get(1),12.0);
 

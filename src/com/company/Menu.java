@@ -27,7 +27,7 @@ public class Menu {
             String input = scn.next();
             try {
                 balance = Double.parseDouble(input);
-                break;
+                if (balance>=0) break;
                 // number is good.
 
             } catch (NumberFormatException e) {
@@ -41,7 +41,7 @@ public class Menu {
             String input = scn.next();
             try {
                 creditLimit = Integer.parseInt(input);
-                break;
+                if (creditLimit>=0) break;
                 //number is good.
 
             } catch (NumberFormatException e) {
