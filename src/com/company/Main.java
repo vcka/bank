@@ -20,12 +20,11 @@ public class Main {
         itemsMain.add(new Item("adb123",39.5, 40, "Marskineliai", "Marskineliai su CodeAcademy logotipu." ));
 
         users.get(0).addItem(itemsMain.get(0));
-
         System.out.println(users.get(0).getItems().toString());
+
+
         Transaction t = new Transaction(users.get(0), users.get(1),12.0);
-
         t.makeTransaction();
-
         System.out.println(users.get(0).toString());
 
         new Menu();

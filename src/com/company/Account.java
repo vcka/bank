@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -10,11 +11,14 @@ public class Account {
     private double balance;
     private boolean isCreditable;
     private int creditLimit;
-    public List<Item> items;
+    public List<Item> items = new ArrayList<>();
+
+
 
     public List<Item> getItems(){
         return items;
     }
+
 
     public void addItem(Item item){
         items.add(item);
@@ -26,6 +30,16 @@ public class Account {
             if (productId.equals(item.getProductId())) return item;
         }
         System.out.println("Produktas nerastas");
+        return null;
+    }
+
+    public Item changeItemQuantity(String productId){
+        for(int i = 0; i<items.size(); i++){
+            Item item = items.get(i);
+            if (productId.equals(item.getProductId())) {
+                Item quantity = items.get(i).getQuantity();
+            }
+        }
         return null;
     }
 
@@ -59,6 +73,7 @@ public class Account {
         this.isCreditable = true;
         this.creditLimit = cl;
         this.accountNumber = generateNumber();
+
     }
 
     @Override
@@ -71,6 +86,10 @@ public class Account {
                 ", isCreditable=" + isCreditable +
                 ", creditLimit=" + creditLimit +
                 '}';
+    }
+
+    public String printItems(){
+        return  "";
     }
 
     public String getName() {
