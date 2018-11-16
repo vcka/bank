@@ -37,7 +37,7 @@ public class Account {
         for(int i = 0; i<items.size(); i++){
             Item item = items.get(i);
             if (productId.equals(item.getProductId())) {
-                Item quantity = items.get(i).getQuantity();
+                int quantity = items.get(i).getQuantity();
             }
         }
         return null;
